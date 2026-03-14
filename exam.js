@@ -87,4 +87,32 @@ document.getElementById("result").style.display="block";
 
 document.getElementById("score").innerHTML="Your Score: "+score;
 
+fetch("/submit",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+name:document.getElementById("name").value,
+roll:document.getElementById("roll").value,
+college:document.getElementById("college").value,
+email:document.getElementById("email").value,
+score:score
+
+})
+
+}).then(r=>r.text()).then(msg=>{
+
+if(msg=="ALREADY"){
+alert("You have already attempted this exam.");
+}
+
+});
+
+}
+
 }
