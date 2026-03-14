@@ -1,0 +1,12 @@
+{
+"name": "math-cbt-exam",
+"version": "1.0.0",
+"description": "Mathematics CBT Examination Portal",
+"main": "server.js",
+"scripts": {
+"start": "node server.js"
+},
+"dependencies": {
+"express": "^4.18.2"
+}
+}
