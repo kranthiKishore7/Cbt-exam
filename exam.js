@@ -1,0 +1,90 @@
+let current=0;
+let score=0;
+let time=120;
+let q=[];
+
+function startExam(){
+
+q=[...questions].sort(()=>Math.random()-0.5);
+
+document.getElementById("login").style.display="none";
+document.getElementById("exam").style.display="block";
+
+loadQuestion();
+
+}
+
+function loadQuestion(){
+
+let item=q[current];
+
+document.getElementById("sectionTitle").innerHTML=item.section;
+document.getElementById("question").innerHTML=item.question;
+
+let html="";
+
+item.options.forEach((o,i)=>{
+
+html+=`<button onclick="answer(${i})">${o}</button><br><br>`;
+
+});
+
+document.getElementById("options").innerHTML=html;
+
+startTimer();
+
+}
+
+function answer(i){
+
+if(i==q[current].correct) score+=2;
+else score-=0.5;
+
+next();
+
+}
+
+function next(){
+
+current++;
+
+if(current>=q.length){
+
+finish();
+
+}else{
+
+time=120;
+loadQuestion();
+
+}
+
+}
+
+function startTimer(){
+
+let t=setInterval(()=>{
+
+time--;
+
+document.getElementById("timer").innerHTML=time;
+
+if(time<=0){
+
+clearInterval(t);
+next();
+
+}
+
+},1000);
+
+}
+
+function finish(){
+
+document.getElementById("exam").style.display="none";
+document.getElementById("result").style.display="block";
+
+document.getElementById("score").innerHTML="Your Score: "+score;
+
+}

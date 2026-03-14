@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mathematics CBT Exam</title>
+<link rel="stylesheet" href="style.css">
+<script src="questions.js"></script>
+<script src="exam.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Mathematics Online CBT Examination</h2>
+
+<div id="login">
+<input id="name" placeholder="Student Name"><br><br>
+<input id="roll" placeholder="Roll Number"><br><br>
+<input id="college" placeholder="College Name"><br><br>
+<input id="email" placeholder="Email"><br><br>
+
+<button onclick="startExam()">Start Exam</button>
+</div>
+
+<div id="exam" style="display:none">
+<h3 id="sectionTitle"></h3>
+<p id="question"></p>
+<div id="options"></div>
+<p>Time left: <span id="timer">120</span> sec</p>
+</div>
+
+<div id="result" style="display:none">
+<h2>Exam Result</h2>
+<p id="score"></p>
+</div>
+
+</div>
+
+</body>
+</html>
