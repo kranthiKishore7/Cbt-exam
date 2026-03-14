@@ -4,6 +4,9 @@ let time=120;
 let q=[];
 
 function startExam(){
+  if(!questions || questions.length===0){
+alert("Questions not loaded.");
+    return;}
 
 q=[...questions].sort(()=>Math.random()-0.5);
 
@@ -11,6 +14,7 @@ document.getElementById("login").style.display="none";
 document.getElementById("exam").style.display="block";
 
 loadQuestion();
+}
 
 function startExam(){
 
