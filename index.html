@@ -1,41 +1,104 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
 <meta charset="UTF-8">
-<title>Mathematics CBT Exam</title>
+<title>Mathematics CBT Examination</title>
 <link rel="stylesheet" href="style.css">
 <script src="questions.js"></script>
-<script src="exam.js"></script>
-</head>
+<script src="exam.js"></script><style>
 
-<body>
+body{
+font-family:Arial;
+background:#eef2f7;
+margin:0;
+}
 
-<div class="container">
+.header{
+background:#003366;
+color:white;
+text-align:center;
+padding:20px;
+}
 
-<h2>Mathematics Online CBT Examination</h2>
+.header h1{
+margin:5px;
+}
 
-<div id="login">
-<input id="name" placeholder="Student Name"><br><br>
-<input id="roll" placeholder="Roll Number"><br><br>
-<input id="college" placeholder="College Name"><br><br>
-<input id="email" placeholder="Email"><br><br>
+.subheader{
+background:#f5f5f5;
+text-align:center;
+padding:10px;
+font-weight:bold;
+}
 
-<button onclick="startExam()">Start Exam</button>
-</div>
+.container{
+max-width:750px;
+margin:30px auto;
+background:white;
+padding:25px;
+border-radius:8px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
 
-<div id="exam" style="display:none">
-<h3 id="sectionTitle"></h3>
-<p id="question"></p>
-<div id="options"></div>
-<p>Time left: <span id="timer">120</span> sec</p>
-</div>
+.instructions{
+background:#f9f9f9;
+padding:15px;
+border-left:5px solid #003366;
+margin-bottom:20px;
+}
 
-<div id="result" style="display:none">
-<h2>Exam Result</h2>
-<p id="score"></p>
-</div>
+input{
+width:90%;
+padding:10px;
+margin:8px 0;
+font-size:16px;
+}
 
-</div>
+button{
+background:#003366;
+color:white;
+border:none;
+padding:12px 25px;
+font-size:16px;
+cursor:pointer;
+border-radius:5px;
+}
 
-</body>
+button:hover{
+background:#0055aa;
+}
+
+#options button{
+display:block;
+width:100%;
+margin:10px 0;
+}
+
+.timer{
+font-weight:bold;
+color:red;
+margin-top:10px;
+}
+
+</style></head><body><div class="header"><h1>Government City College</h1>
+<h3>Department of Mathematics</h3></div><div class="subheader">Mathematics Online CBT Examination<br>
+On the Occasion of International Mathematics Day – March 14
+
+</div><div class="container"><div class="instructions"><b>Exam Instructions:</b>
+
+<ul>
+<li>Total Questions: 42</li>
+<li>Time: 2 minutes per question</li>
+<li>Correct answer: +2 marks</li>
+<li>Wrong answer: −0.5 marks</li>
+<li>Do not refresh the page during exam</li>
+<li>Each student can attempt the exam only once</li>
+</ul></div><div id="login"><h3>Student Login</h3><input id="name" placeholder="Student Name"><br>
+<input id="roll" placeholder="Roll Number"><br>
+<input id="college" placeholder="College Name"><br>
+<input id="email" placeholder="Email Address"><br>
+
+<br><button onclick="startExam()">Start Examination</button>
+
+</div><div id="exam" style="display:none"><h3 id="sectionTitle"></h3><p id="question"></p><div id="options"></div><p class="timer">Time Left: <span id="timer">120</span> sec</p></div><div id="result" style="display:none"><h2>Exam Result</h2>
+<p id="score"></p></div></div></body>
 </html>
