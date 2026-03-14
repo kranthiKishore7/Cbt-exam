@@ -12,6 +12,23 @@ document.getElementById("exam").style.display="block";
 
 loadQuestion();
 
+function startExam(){
+
+if(typeof questions === "undefined"){
+alert("Questions not loaded.");
+return;
+}
+
+q=[...questions].sort(()=>Math.random()-0.5);
+
+current=0;
+score=0;
+
+document.getElementById("login").style.display="none";
+document.getElementById("exam").style.display="block";
+
+loadQuestion();
+
 }
 
 function loadQuestion(){
@@ -23,9 +40,9 @@ document.getElementById("question").innerHTML=item.question;
 
 let html="";
 
-item.options.forEach((o,i)=>{
+item.options.forEach((opt,i)=>{
 
-html+=`<button onclick="answer(${i})">${o}</button><br><br>`;
+html+="<button onclick="answer(${i})">${opt}</button><br><br>";
 
 });
 
